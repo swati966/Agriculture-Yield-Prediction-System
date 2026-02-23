@@ -116,7 +116,7 @@ python spark/spark_job.py
 
 sql/snowflake_queries.sql
 
-Future Enhancements:
+## Future Enhancements:
 
 - Real-time Streaming using Spark Structured Streaming
 
