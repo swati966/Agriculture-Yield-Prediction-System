@@ -116,10 +116,4 @@ python spark/spark_job.py
 
 sql/snowflake_queries.sql
 
-## Future Enhancements:
 
-- Real-time Streaming using Spark Structured Streaming
-
-- ML-based Yield Prediction Model
-
-- Automated Dashboard Refresh
