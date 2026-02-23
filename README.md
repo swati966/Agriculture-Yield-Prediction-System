@@ -112,8 +112,8 @@ python etl/etl.py
 
 python spark/spark_job.py
 
-### 3️⃣ Execute SQL Queries in Snowflake
-```sql
+3️⃣ Execute SQL Queries in Snowflake
+
 sql/snowflake_queries.sql
 
 ## Future Enhancements:
