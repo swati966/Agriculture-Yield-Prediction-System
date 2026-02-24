@@ -175,8 +175,11 @@ Execute snowflake_queries.sql in Snowflake Worksheet
 
 -----------------------------------------
 
+
 OUTPUT
 
 Interactive dashboard created in Power BI for agriculture yield insights.
 
------------------------------------------
+
+
+
