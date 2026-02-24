@@ -51,9 +51,6 @@ Agriculture-Yield-Prediction-System
 │
 ├── Agriculture_Yield_Dashboard.pbix
 └── README.md
-
-
-
 ---
 
 ## ⚙️ Project Implementation Steps
