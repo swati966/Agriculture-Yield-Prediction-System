@@ -28,29 +28,7 @@ The objective of this project is to:
 | Power BI | Dashboard Visualization |
 | GitHub | Version Control |
 
----
 
-##  Project Structure
-Agriculture-Yield-Prediction-System
-│
-├── Data
-│ ├── Raw
-│ └── Processed
-│
-├── etl
-│ └── etl.py
-│
-├── spark
-│ └── spark_job.py
-│
-├── sql
-│ └── snowflake_queries.sql
-│
-├── ml
-│
-├── Agriculture_Yield_Dashboard.pbix
-└── README.md
----
 
 ## ⚙️ Project Implementation Steps
 
