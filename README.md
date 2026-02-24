@@ -1,125 +1,182 @@
-#  Agriculture Yield Prediction System using Data Engineering Pipeline
+# 🌾 Agriculture Yield Prediction System
 
----
+-----------------------------------------
 
-## 📖 Project Overview
+ PROJECT DESCRIPTION
 
-The Agriculture Yield Prediction System is an end-to-end data engineering project designed to analyze agricultural datasets and predict crop yield using modern data warehouse and big data technologies.
+This project is an end-to-end Data Engineering pipeline built to analyze agriculture crop yield data using cloud data warehouse and big data tools.
 
-This project implements a complete pipeline including:
+The aim of this project is to:
 
-- Data Extraction  
-- Data Transformation  
-- Batch Processing using Apache Spark  
-- Advanced SQL Analysis  
-- Cloud Data Warehousing using Snowflake  
-- Data Visualization using Power BI  
+• Clean and transform raw agriculture data  
+• Store data in Snowflake Data Warehouse  
+• Perform advanced SQL analysis  
+• Process large datasets using Apache Spark  
+• Implement data optimization and security  
+• Visualize insights using Power BI Dashboard  
 
----
+-----------------------------------------
 
-##  Tech Stack Used
+TOOLS & TECHNOLOGIES USED
 
-| Technology | Purpose |
-|------------|--------|
-| Python | ETL Pipeline |
-| Apache Spark | Batch Processing |
-| Snowflake | Cloud Data Warehouse |
-| SQL | Data Analysis |
-| Power BI | Dashboard Visualization |
-| GitHub | Version Control |
+Python          - Data Cleaning (ETL)
+Apache Spark    - Batch Processing
+Snowflake       - Cloud Data Warehouse
+SQL             - Data Analysis
+Power BI        - Dashboard
+Draw.io         - Architecture Diagram
+GitHub          - Project Repository
 
----
-
-## Project Structure
+-----------------------------------------
+PROJECT FOLDER STRUCTURE
 
 Agriculture-Yield-Prediction-System
 │
-├── Data
-│ ├── Raw
-│ └── Processed
+├── data
+│   ├── raw
+│   └── cleaned
 │
 ├── etl
-│ └── etl.py
+│   └── etl.py
 │
 ├── spark
-│ └── spark_job.py
+│   └── spark_job.py
 │
 ├── sql
-│ └── snowflake_queries.sql
+│   └── snowflake_queries.sql
 │
-├── ml
+├── architecture
+│   └── architecture_diagram.png
 │
 ├── Agriculture_Yield_Dashboard.pbix
 └── README.md
 
+-----------------------------------------
 
----
+⚙️ PROJECT IMPLEMENTATION STEPS
 
-## 🔄 ETL Pipeline
+STEP 1: DATA COLLECTION
+Agriculture dataset is collected in CSV format containing:
+Area, Crop Type, Year, Yield, Rainfall, Temperature, Pesticides usage.
 
-- Extract raw agricultural datasets  
-- Clean and preprocess data  
-- Perform transformation using Python  
-- Load processed data into Snowflake Data Warehouse  
+-----------------------------------------
 
----
+STEP 2: PYTHON ETL PIPELINE
+Python (Pandas) is used to:
+• Remove unwanted columns  
+• Rename column names  
+• Handle missing values  
+• Clean dataset  
 
-##  Apache Spark Processing
+Cleaned dataset is saved as:
+cleaned_data.csv
 
-Batch processing of large datasets is performed using Apache Spark to:
+-----------------------------------------
 
-- Aggregate crop yield by region  
-- Perform statistical analysis  
-- Prepare cleaned dataset for warehouse loading  
+STEP 3: DATA WAREHOUSE DESIGN (STAR SCHEMA)
 
----
+Snowflake database is created with:
 
-##  Advanced SQL Features Implemented
+• FACT_YIELD Table  
+• DIM_CROP Table  
+• DIM_LOCATION Table  
+• DIM_WEATHER Table  
 
-- CTE (Common Table Expressions)  
-- Aggregation Functions  
-- Window Functions  
-- Data Validation Queries  
-- Yield Analysis by Area  
+-----------------------------------------
 
----
+STEP 4: DATA LOADING IN SNOWFLAKE
 
-## 📊 Dashboard
+Cleaned dataset is uploaded to Snowflake table:
+CLEANED_DATA
 
-Power BI dashboard is used for:
+-----------------------------------------
 
-- Crop Yield Visualization  
-- Area-wise Production Analysis  
-- Trend Analysis  
+STEP 5: ADVANCED SQL ANALYSIS
 
----
+Following SQL concepts are implemented:
 
-##  Data Warehouse Optimization
+• CTE (Common Table Expressions)  
+• Window Functions  
+• Ranking  
+• Running Total  
+• Partitioning  
 
-- Snowflake Time Travel  
-- Clustering  
-- Semi-Structured Data Handling  
+Used for:
+Area-wise yield analysis  
+Crop ranking  
+Yield trends over years  
 
----
+-----------------------------------------
 
-##  How to Run the Project
+STEP 6: APACHE SPARK PROCESSING
 
-### 1️ Run ETL Pipeline
-```bash
+Apache Spark is used for:
+
+• Distributed batch processing  
+• Aggregation of large datasets  
+• Yield analysis by Area and Crop  
+
+-----------------------------------------
+
+STEP 7: SNOWFLAKE OPTIMIZATION
+
+Storage optimization features used:
+
+• Clustering  
+• Time Travel  
+• Semi-Structured Data (VARIANT)  
+• Warehouse Scaling  
+
+-----------------------------------------
+
+STEP 8: SECURITY IMPLEMENTATION
+
+Security is implemented using:
+
+• RBAC (Role Based Access Control)  
+• Data Masking Policy  
+
+-----------------------------------------
+
+STEP 9: DASHBOARD VISUALIZATION
+
+Power BI dashboard is created for:
+
+• Area-wise Yield Analysis  
+• Crop-wise Yield Comparison  
+• Year-wise Trend Analysis  
+
+-----------------------------------------
+
+ ARCHITECTURE
+
+Architecture diagram shows:
+
+• Data Source  
+• ETL Pipeline  
+• Snowflake Warehouse  
+• Optimization Layer  
+• Spark Processing  
+• Security Layer  
+• Power BI Dashboard  
+
+-----------------------------------------
+
+HOW TO RUN THE PROJECT:
+
+Run ETL Script:
 python etl/etl.py
 
-2️⃣ Run Spark Job
-
+Run Spark Job:
 python spark/spark_job.py
 
-3️⃣ Execute SQL Queries in Snowflake
+Run SQL Queries:
+Execute snowflake_queries.sql in Snowflake Worksheet
 
-sql/snowflake_queries.sql
+-----------------------------------------
 
-## Future Enhancements:
+OUTPUT
 
-- Real-time Streaming using Spark Structured Streaming
+Interactive dashboard created in Power BI for agriculture yield insights.
 
-- ML-based Yield Prediction Model
-
-- Automated Dashboard Refresh
+-----------------------------------------
