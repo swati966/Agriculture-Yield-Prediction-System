@@ -33,9 +33,9 @@ The objective of this project is to:
 ##  Project Structure
 Agriculture-Yield-Prediction-System
 │
-├── data
-│ ├── raw
-│ └── cleaned
+├── Data
+│ ├── Raw
+│ └── Processed
 │
 ├── etl
 │ └── etl.py
@@ -46,8 +46,7 @@ Agriculture-Yield-Prediction-System
 ├── sql
 │ └── snowflake_queries.sql
 │
-├── architecture
-│ └── architecture_diagram.png
+├── ml
 │
 ├── Agriculture_Yield_Dashboard.pbix
 └── README.md
