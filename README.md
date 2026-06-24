@@ -1,148 +1,187 @@
-#  Agriculture Yield Prediction System
+AGRICULTURE YIELD PREDICTION SYSTEM
+--------------------------------------------------
 
-## Project Description
+PROJECT DESCRIPTION
 
-This project is an end-to-end Data Engineering pipeline built to analyze agricultural crop yield data using cloud data warehouse and big data technologies.
+This project is an end-to-end Data Engineering Pipeline built to analyze agricultural crop yield data using Cloud Data Warehouse and Big Data technologies.
 
-The objective of this project is to:
+Project Objectives:
 
-- Design a Data Warehouse using Star Schema
-- Build Python-based ETL pipeline
-- Process large datasets using Apache Spark
-- Store and analyze data using Snowflake
-- Perform advanced analytical queries using SQL
-- Implement secure data access using RBAC
-- Apply Snowflake optimization techniques
-- Visualize insights using Power BI Dashboard
+• Design a Data Warehouse using Star Schema  
+• Build Python-based ETL pipeline  
+• Perform ELT using Snowflake SQL  
+• Process large datasets using Apache Spark  
+• Store and analyze data using Snowflake  
+• Implement Advanced Analytical Queries  
+• Apply Snowflake Optimization Techniques  
+• Implement Governance & Security  
+• Perform Performance Monitoring  
+• Visualize insights using Power BI Dashboard  
 
----
+--------------------------------------------------
 
-## Tools & Technologies Used
+TOOLS & TECHNOLOGIES USED
 
-| Technology | Purpose |
-|------------|--------|
-| Python | ETL Pipeline |
-| Apache Spark | Batch Processing |
-| Snowflake | Cloud Data Warehouse |
-| SQL | Analytical Queries |
-| Power BI | Dashboard Visualization |
-| GitHub | Version Control |
+Python          - ETL Pipeline
+Apache Spark    - Batch Processing
+Snowflake       - Cloud Data Warehouse
+SQL             - Analytical Queries
+Power BI        - Dashboard Visualization
+GitHub          - Version Control
 
+--------------------------------------------------
 
+PROJECT IMPLEMENTATION STEPS
 
-## ⚙️ Project Implementation Steps
+STEP 1: DATA COLLECTION
 
-### 1️⃣ Data Collection
 Agricultural dataset collected in CSV format containing:
 
-- Area  
-- Crop Type  
-- Year  
-- Yield  
-- Rainfall  
-- Temperature  
-- Pesticides Usage  
+Area  
+Crop Type  
+Year  
+Yield  
+Rainfall  
+Temperature  
+Pesticides Usage  
 
----
+--------------------------------------------------
 
-### 2️⃣ Python ETL Pipeline
+STEP 2: PYTHON ETL (EXTRACT–TRANSFORM)
+
+ETL implemented using:
+
+etl.py  → Main automated ETL script  
+agriculture_etl_pipeline.ipynb → Development & testing notebook
+
 Python (Pandas) is used to:
 
-- Remove unwanted columns  
-- Rename column names  
-- Handle missing values  
-- Clean dataset  
+• Remove unwanted columns  
+• Rename column names  
+• Handle missing values  
+• Clean dataset  
 
-Cleaned dataset is stored as:
+Cleaned dataset stored as:
+
 cleaned_data.csv
 
+--------------------------------------------------
 
----
+STEP 3: DATA WAREHOUSE DESIGN (STAR SCHEMA)
 
-### 3️⃣ Data Warehouse Design (Star Schema)
+Dimension Tables:
+DIM_CROP  
+DIM_LOCATION  
+DIM_WEATHER  
 
-Designed a Star Schema consisting of:
+Fact Table:
+FACT_YIELD  
 
-**Dimension Tables**
-- DIM_CROP  
-- DIM_LOCATION  
-- DIM_WEATHER  
+--------------------------------------------------
 
-**Fact Table**
-- FACT_YIELD  
+STEP 4: SNOWFLAKE CLOUD WAREHOUSE
 
----
+• Created AGRI_DB Database  
+• Created AGRI_SCHEMA  
+• Loaded processed dataset into Snowflake  
 
-### 4️⃣ Snowflake Cloud Warehouse
+--------------------------------------------------
 
-- Created AGRI_DB Database  
-- Created AGRI_SCHEMA  
-- Loaded processed dataset into Snowflake  
-- Enabled analytical querying using warehouse tables  
-
----
-
-### 5️⃣ Advanced SQL Analysis
+STEP 5: SNOWFLAKE ELT (LOAD–TRANSFORM)
 
 Implemented:
 
-- CTE (Common Table Expressions)  
-- Window Functions  
-- Ranking Queries  
-- Running Total Analysis  
-- Partition-based Analysis  
+• STAGING Layer (YIELD_CLEAN table)  
+• Dimension Tables (DIM_CROP, DIM_LOCATION, DIM_WEATHER)  
+• Fact Table (FACT_YIELD)  
 
----
+Data joined and inserted into Fact table using SQL-based ELT process.
+etl.py  → Main automated ETL script  
+agriculture_etl_pipeline.ipynb → Development & testing notebook
 
-### 6️⃣ Apache Spark Batch Processing
+--------------------------------------------------
+
+STEP 6: ADVANCED SQL ANALYSIS
+
+Implemented:
+
+• CTE (Common Table Expressions)  
+• Window Functions  
+• Ranking Queries  
+• Running Total Analysis  
+• Partition-based Analysis  
+
+--------------------------------------------------
+
+STEP 7: APACHE SPARK BATCH PROCESSING
 
 Used PySpark for:
 
-- Distributed batch processing  
-- Yield aggregation by Area  
-- Trend analysis over years  
+• Distributed batch processing  
+• Yield aggregation by Area  
+• Trend analysis over years  
 
----
+--------------------------------------------------
 
-### 7️⃣ Security Implementation
+STEP 8: GOVERNANCE & SECURITY
 
 Implemented:
 
-- Role-Based Access Control (RBAC)  
-for secure data access in Snowflake  
+• Role-Based Access Control (RBAC)  
+• Data Masking Policy  
+• Row-Level Security Policy  
 
----
+--------------------------------------------------
 
-### 8️⃣ Snowflake Optimization Techniques Implemented
+STEP 9: SNOWFLAKE STORAGE & PERFORMANCE OPTIMIZATION
 
-To enhance storage efficiency and analytical query performance in Snowflake, the following techniques were implemented:
+Implemented:
 
-- **Clustering**  
-  Applied clustering keys on frequently queried columns to improve query performance.
+• Clustering  
+• Time Travel  
+• Semi-Structured Data Handling (VARIANT)  
+• Warehouse Scaling  
 
-- **Time Travel**  
-  Utilized Snowflake Time Travel feature for historical data querying and recovery.
+--------------------------------------------------
 
-- **Semi-Structured Data Handling**  
-  Implemented VARIANT data type to store and query semi-structured JSON data.
-
----
-
-### 9️⃣ Dashboard Visualization
+STEP 10: DASHBOARD VISUALIZATION
 
 Power BI dashboard created for:
 
-- Area-wise Yield Analysis  
-- Crop-wise Yield Comparison  
-- Year-wise Trend Analysis  
+• Area-wise Yield Analysis  
+• Crop-wise Yield Comparison  
+• Year-wise Trend Analysis  
+• Rainfall Impact Analysis  
+• Temperature Impact Analysis  
 
----
+--------------------------------------------------
 
-##  How to Run the Project
+HOW TO RUN THE PROJECT
 
 Run ETL Script:
-```bash
-python etl/etl.py
+python etl.py
 
 Run Spark Job:
 python spark/spark_job.py
+
+--------------------------------------------------
+
+ARCHITECTURE FLOW
+
+Raw CSV Data
+    ↓
+Python ETL Pipeline (Pandas)
+    ↓
+Snowflake Data Warehouse (Star Schema)
+    ↓
+Snowflake Optimization Layer
+    ↓
+Advanced SQL Analytics
+    ↓
+Apache Spark Processing
+    ↓
+RBAC & Governance
+    ↓
+Power BI Dashboard
+
+--------------------------------------------------
